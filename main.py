@@ -18,19 +18,19 @@ GRUEN   = ( 0, 255, 0)
 SCHWARZ = ( 0, 0, 0)
 WEISS   = ( 255, 255, 255)
 
-BG=pygame.transform.scale2x(pygame.image.load(os.path.join("background.png")))
-PLAYER_IMG=pygame.image.load(os.path.join("player.png"))
-KEY=pygame.transform.scale(pygame.image.load(os.path.join("key.png")),(80,80))
-PLAYER_IMG_SMALL=pygame.transform.scale(pygame.image.load(os.path.join("player.png")),(33,33))
-KEY_SMALL=pygame.transform.scale(pygame.image.load(os.path.join("key.png")),(40,40))
-SWITCH_RECHTS=pygame.transform.scale(pygame.image.load(os.path.join("RECHTS.png")),(60,60))
-SWITCH_RECHTS_SMALL=pygame.transform.scale(pygame.image.load(os.path.join("RECHTS.png")),(30,30))
-SWITCH_UP=pygame.transform.scale(pygame.image.load(os.path.join("UP.png")),(60,60))
-SWITCH_UP_SMALL=pygame.transform.scale(pygame.image.load(os.path.join("UP.png")),(30,30))
-SWITCH_DOWN=pygame.transform.scale(pygame.image.load(os.path.join("DOWN.png")),(60,60))
-SWITCH_DOWN_SMALL=pygame.transform.scale(pygame.image.load(os.path.join("DOWN.png")),(30,30))
-SWITCH_KLEIN=pygame.transform.scale(pygame.image.load(os.path.join("KLEINER.png")),(60,60))
-SWITCH_GROSS=pygame.transform.scale(pygame.image.load(os.path.join("GRÖSSER.png")),(30,30))
+BG=pygame.transform.scale2x(pygame.image.load(os.path.join("imgs","background.png")))
+PLAYER_IMG=pygame.image.load(os.path.join("imgs","player.png"))
+KEY=pygame.transform.scale(pygame.image.load(os.path.join("imgs","key.png")),(80,80))
+PLAYER_IMG_SMALL=pygame.transform.scale(pygame.image.load(os.path.join("imgs","player.png")),(33,33))
+KEY_SMALL=pygame.transform.scale(pygame.image.load(os.path.join("imgs","key.png")),(40,40))
+SWITCH_RECHTS=pygame.transform.scale(pygame.image.load(os.path.join("imgs","RECHTS.png")),(60,60))
+SWITCH_RECHTS_SMALL=pygame.transform.scale(pygame.image.load(os.path.join("imgs","RECHTS.png")),(30,30))
+SWITCH_UP=pygame.transform.scale(pygame.image.load(os.path.join("imgs","UP.png")),(60,60))
+SWITCH_UP_SMALL=pygame.transform.scale(pygame.image.load(os.path.join("imgs","UP.png")),(30,30))
+SWITCH_DOWN=pygame.transform.scale(pygame.image.load(os.path.join("imgs","DOWN.png")),(60,60))
+SWITCH_DOWN_SMALL=pygame.transform.scale(pygame.image.load(os.path.join("imgs","DOWN.png")),(30,30))
+SWITCH_KLEIN=pygame.transform.scale(pygame.image.load(os.path.join("imgs","KLEINER.png")),(60,60))
+SWITCH_GROSS=pygame.transform.scale(pygame.image.load(os.path.join("imgs","GRÖSSER.png")),(30,30))
 
 
 
@@ -185,9 +185,9 @@ class construct:
         self.bottomright=[self.x+self.width,self.y+self.height]
         self.direction=1
         if self.height>self.width:
-            self.l=pygame.transform.rotate(pygame.image.load(os.path.join("Plattform.png")),90)
+            self.l=pygame.transform.rotate(pygame.image.load(os.path.join("imgs","Plattform.png")),90)
         else:
-            self.l=pygame.image.load(os.path.join("Plattform.png"))
+            self.l=pygame.image.load(os.path.join("imgs","Plattform.png"))
         self.image=pygame.transform.scale(self.l,(self.width,self.height))
         
     
@@ -417,9 +417,9 @@ class jumper:
         self.bottomright=[self.x+self.width,self.y+self.height]
         self.direction=1
         if self.height>self.width:
-            self.l=pygame.transform.rotate(pygame.image.load(os.path.join("JUMPER.png")),90)
+            self.l=pygame.transform.rotate(pygame.image.load(os.path.join("imgs","JUMPER.png")),90)
         else:
-            self.l=pygame.image.load(os.path.join("JUMPER.png"))
+            self.l=pygame.image.load(os.path.join("imgs","JUMPER.png"))
         self.image=pygame.transform.scale(self.l,(self.width,self.height))
     
     def ground(self, x, y, size, scene):
@@ -1073,9 +1073,6 @@ while gamer:
             p1.actualise()
             
             p1.move(mover)
-
-            print(p1.getx(),p1.gety())
-
             
             if jumping:
                 if p1.jump(ground,difficulty):
